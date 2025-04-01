@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// View modeling protocol to allow for testability in the future
 @MainActor
 protocol CompaniesListViewModeling {
     var companies: [Company] { get }
@@ -15,7 +16,7 @@ protocol CompaniesListViewModeling {
     func fetchCompanies() async
 }
 
-/// Observale view model class that is responsible for fetching and returning the data needed for the CompanyListView
+/// Observable view model class that is responsible for fetching and returning the data needed for the CompanyListView
 @MainActor
 @Observable class CompaniesListViewModel: CompaniesListViewModeling {
     // companies property that will be updated if there are companies returned from the API, otherwise, empty
